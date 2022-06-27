@@ -117,7 +117,7 @@ const pipsFor3R = computed(() => getPipsForNR(3));
             Pips for 2R: <span class="font-weight-bold">{{ pipsFor2R }}</span>
           </p>
           <p class="d-flex justify-content-between calculation-result">
-            Pips for 2R: <span class="font-weight-bold">{{ pipsFor3R }}</span>
+            Pips for 3R: <span class="font-weight-bold">{{ pipsFor3R }}</span>
           </p>
         </b-container>
         <b-container class="p-0 d-flex align-items-center">
@@ -153,6 +153,12 @@ const pipsFor3R = computed(() => getPipsForNR(3));
 :deep(.container) {
   max-width: 720px;
 }
+
+@media (min-width: 768px) {
+  .container-sm {
+    max-width: 720px !important;
+  }
+}
 .calculation-result {
   font-size: 1.5rem;
 }
@@ -163,3 +169,5 @@ const pipsFor3R = computed(() => getPipsForNR(3));
   font-weight: bold;
 }
 </style>
+
+
