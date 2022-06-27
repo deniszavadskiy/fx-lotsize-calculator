@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from "vue";
+import { computed, ref, watch, onMounted } from "vue";
 
 defineProps({
   msg: String,
@@ -15,6 +15,24 @@ const riskInUSD = computed(() => (accountSize.value * risk.value) / 100);
 const stopLossWithCommission = computed(
   () => tickCost.value + parseFloat(stopLossPips.value)
 );
+
+watch(accountSize, (newValue) => {
+  localStorage.setItem("accountSize", newValue);
+});
+
+watch(risk, (newValue) => {
+  localStorage.setItem("risk", newValue);
+});
+
+watch(lotCommission, (newValue) => {
+  localStorage.setItem("lotCommission", newValue);
+});
+
+onMounted(() => {
+  accountSize.value = localStorage.getItem("accountSize") || 5000;
+  risk.value = localStorage.getItem("risk") || 1;
+  lotCommission.value = localStorage.getItem("lotCommission") || 3;
+});
 
 function getNumberWith2Digits(number) {
   return Math.round(number * 100) / 100;
@@ -41,7 +59,15 @@ const pipsFor3R = computed(() => getPipsForNR(3));
 <template>
   <b-container fluid="sm">
     <b-row cols="1" cols-md="2">
-      <b-col class="d-flex flex-column justify-content-between text-left config-column">
+      <b-col
+        class="
+          d-flex
+          flex-column
+          justify-content-between
+          text-left
+          config-column
+        "
+      >
         <b-container class="p-0 d-flex align-items-center">
           <label for="accSizeInput" class="flex-1">Account size in $</label>
           <b-form-input
@@ -125,15 +151,15 @@ const pipsFor3R = computed(() => getPipsForNR(3));
   border: none;
 }
 :deep(.container) {
-    max-width: 720px;
+  max-width: 720px;
 }
 .calculation-result {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
-.config-column .container{
-    margin: 1rem 0;
+.config-column .container {
+  margin: 1rem 0;
 }
 .font-weight-bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 </style>
