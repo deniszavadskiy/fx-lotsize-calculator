@@ -1,7 +1,5 @@
-# Vue 3 + Vite
+# Forex lot size calculator
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+<img width="1103" alt="Screenshot 2022-06-28 at 11 53 52" src="https://user-images.githubusercontent.com/19765135/176137642-92b86220-0cfa-4848-9456-60e92837b34d.png">
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+Demo - https://deniszavadskiy.github.io/fx-lotsize-calculator/
