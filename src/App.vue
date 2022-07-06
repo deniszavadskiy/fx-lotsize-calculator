@@ -6,7 +6,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <template>
   <img alt="calculator logo" class="logo" src="./assets/logo.png" />
-  <HelloWorld/>
+  <HelloWorld />
 </template>
 
 <style>
@@ -14,14 +14,15 @@ html,
 body {
   width: 100%;
   height: 100%;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
-body {
-  background: linear-gradient(
-    340deg,
-    rgba(155, 176, 255, 1) 0%,
-    rgba(226, 250, 255, 1) 100%
-  );
+#app p,
+label {
+  color: #fff !important;
+  font-size: 1.2rem;
 }
 
 #app {
@@ -37,4 +38,23 @@ body {
   margin: 1rem;
 }
 
+@media (max-width: 576px) {
+  .logo {
+    width: 150px;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
 </style>
