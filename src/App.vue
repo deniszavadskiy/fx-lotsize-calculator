@@ -9,19 +9,20 @@ import HelloWorld from "./components/HelloWorld.vue";
   <HelloWorld />
 </template>
 
-<style>
+<style lang="scss">
+@import 'bootstrap/scss/bootstrap.scss';
+@import 'bootstrap-vue-3/src/styles/styles.scss';
+
 html,
 body {
   width: 100%;
   height: 100%;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background-color: #262729;
 }
 
 #app p,
 label {
-  color: #fff !important;
+  color: #a2acbd;
   font-size: 1.2rem;
 }
 
@@ -41,20 +42,6 @@ label {
 @media (max-width: 576px) {
   .logo {
     width: 150px;
-  }
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
   }
 }
 </style>

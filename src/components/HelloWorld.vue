@@ -35,6 +35,10 @@ function getNumberWith2Digits(number) {
   return Math.round(number * 100) / 100;
 }
 
+function onStopSizeInputFocus() {
+  stopLossTicks.value = '';
+}
+
 const lotsWithCommission = computed(() => {
   const lots = (riskInUSD.value / stopLossWithCommission.value / 0.1) * 0.01;
 
@@ -97,7 +101,7 @@ const pipsFor3R = computed(() => getPipsForNR(3));
         <b-container class="p-0 d-flex align-items-center">
           <label for="stopLossTicks" class="flex-1 text-left">Stop Loss(ticks)</label>
           <b-form-input min="10" class="flex-1" size="lg" id="stopLossTicks" v-model="stopLossTicks"
-            placeholder="Stop loss pips" type="number" inputmode="numeric" @focus.native="this.stopLossTicks = ''">
+            placeholder="Stop loss pips" type="number" inputmode="numeric" @focus="onStopSizeInputFocus">
           </b-form-input>
         </b-container>
       </b-col>
@@ -116,6 +120,8 @@ const pipsFor3R = computed(() => getPipsForNR(3));
 
 :deep(.form-control) {
   border: none;
+  color: #fff;
+  background-color: #36373b;
 }
 
 :deep(.container) {
@@ -130,6 +136,7 @@ const pipsFor3R = computed(() => getPipsForNR(3));
 
 .calculation-result {
   font-weight: bold;
+  color: #00c7b4 !important;
 }
 
 .calculation-result span {
