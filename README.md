@@ -1,5 +1,5 @@
 # Forex lot size calculator
 
-<img width="1103" alt="Screenshot 2022-06-28 at 11 53 52" src="https://user-images.githubusercontent.com/19765135/176137642-92b86220-0cfa-4848-9456-60e92837b34d.png">
+<img width="1176" alt="Screenshot 2022-07-07 at 18 57 57" src="https://user-images.githubusercontent.com/19765135/177818495-f963def0-0cbd-4c71-85cc-67b14e75d930.png">
 
 Demo - https://deniszavadskiy.github.io/fx-lotsize-calculator/
