@@ -5,7 +5,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
-  <img alt="calculator logo" class="logo" src="./assets/logo.png" />
+  <div class="logo"> </div>
   <HelloWorld />
 </template>
 
@@ -24,6 +24,7 @@ body {
 label {
   color: #a2acbd;
   font-size: 1.2rem;
+  text-align: left;
 }
 
 #app {
@@ -32,16 +33,20 @@ label {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
 .logo {
-  width: 250px;
-  margin: 1rem;
+  background: url("./assets/logo.png") center no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
 }
 
-@media (max-width: 576px) {
-  .logo {
-    width: 150px;
-  }
-}
 </style>

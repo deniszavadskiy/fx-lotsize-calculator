@@ -58,7 +58,7 @@ const pipsFor3R = computed(() => getPipsForNR(3));
 </script>
 
 <template>
-  <b-container fluid="sm">
+  <b-container fluid="sm" class="calculator">
     <b-row cols="1" cols-md="2">
       <b-col class="
           d-flex
@@ -110,6 +110,10 @@ const pipsFor3R = computed(() => getPipsForNR(3));
 </template>
 
 <style scoped>
+.calculator {
+  height: 100%;
+}
+
 .flex-1 {
   flex: 1;
 }
@@ -122,6 +126,12 @@ const pipsFor3R = computed(() => getPipsForNR(3));
   border: none;
   color: #fff;
   background-color: #36373b;
+}
+
+:deep(.form-control:focus) {
+  color: #fff;
+  background-color: #2c2c2c;
+  box-shadow: 0 0 0 0.25rem rgb(0 199 180 / 25%);
 }
 
 :deep(.container) {
