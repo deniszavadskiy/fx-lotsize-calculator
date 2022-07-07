@@ -31,6 +31,10 @@ onMounted(() => {
   lotCommission.value = localStorage.getItem("lotCommission") || 3;
 });
 
+function copyLotsToClipboard() {
+  navigator.clipboard.writeText(lotsWithCommission.value);
+}
+
 function getNumberWith2Digits(number) {
   return Math.round(number * 100) / 100;
 }
@@ -55,6 +59,8 @@ function getPipsForNR(rewardNumber) {
 
 const pipsFor2R = computed(() => getPipsForNR(2));
 const pipsFor3R = computed(() => getPipsForNR(3));
+
+
 </script>
 
 <template>
@@ -86,7 +92,7 @@ const pipsFor3R = computed(() => getPipsForNR(3));
       </b-col>
       <b-col class="d-flex flex-column justify-content-between config-column">
         <b-container class="p-0 d-flex flex-column align-items-between">
-          <p class="d-flex justify-content-between calculation-result">
+          <p class="d-flex justify-content-between calculation-result lots-with-commission" @click="copyLotsToClipboard">
             Lots with commission:
             <span class="font-weight-bold">{{ lotsWithCommission }}</span>
           </p>
@@ -147,6 +153,10 @@ const pipsFor3R = computed(() => getPipsForNR(3));
 .calculation-result {
   font-weight: bold;
   color: #00c7b4 !important;
+}
+
+.lots-with-commission {
+  cursor: pointer;
 }
 
 .calculation-result span {
